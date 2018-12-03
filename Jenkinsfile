@@ -43,7 +43,7 @@ node {
     // }
 
     stage('packaging') {
-        sh "./mvnw package -Pprod -DskipTests"
+        sh "./mvnw verify -Pprod -DskipTests"
         archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
 
@@ -55,7 +55,7 @@ node {
     }
 
     stage('publish docker') {
-        docker.withRegistry('	yangcm/registry.hub.docker.yangcm', 'tenhub') {
+        docker.withRegistry('yangcm/registry.hub.docker.yangcm', 'tenhub') {
             dockerImage.push 'latest'
         }
     }
