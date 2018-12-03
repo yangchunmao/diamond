@@ -67,7 +67,7 @@ node {
         sh """
         cp ${env.WORKSPACE}/target/${war_name} /home/servers
         cd /home/servers
-        if [ $(ps -ef | grep ${war_name} | wc -l) -gt 0 ]; then
+        if [ $(ps -ef | grep ${war_name} | wc -l) -gt 1 ]; then
             kill -9 -f ${war_name}
             echo "stop application"
         fi
