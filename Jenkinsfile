@@ -68,7 +68,7 @@ node {
             pkill -9 -f ${jar_name}
             echo "stop application"
         fi
-        JENKINS_NODE_COOKIE=DONTKILLME nohup java -Xmx256m -jar target/${jar_name} --spring.profiles.active=dev,no-liquibase --server.port=${port} &  
+        JENKINS_NODE_COOKIE=dontKillMe nohup java -Xmx256m -jar target/${jar_name} --spring.profiles.active=dev --server.port=${port} >/home/logs/diamond.log 2>&1 &  
         """
     }
 }
