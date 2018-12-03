@@ -71,4 +71,6 @@ node {
     //     JENKINS_NODE_COOKIE=dontKillMe nohup java -Xmx256m -jar target/${jar_name} --spring.profiles.active=dev --server.port=${port} >/home/logs/diamond.log 2>&1 &  
     //     """
     // }
+
+    // nohup java $JAVA_OPTS -Xmx256m -jar target/*.war --spring.profiles.active=dev --server.port=80 >/home/logs/diamond.log 2>&1
 }
