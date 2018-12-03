@@ -64,8 +64,8 @@ node {
         def jar_name = "diamond-0.0.1-SNAPSHOT.war"
         def port = 80
         sh """
-        cp ${env.WORKSPACE}/target/${jar_name} ~/servers
-        cd ~/servers
+        cp ${env.WORKSPACE}/target/${jar_name} ~/diamond-servers
+        cd ~/diamond-servers
         if [ \$(pgrep -f ${jar_name} | wc -l) -gt 0 ]; then
             pkill -9 -f ${jar_name}
             echo "stop application"
