@@ -60,18 +60,17 @@ node {
     //     }
     // }
 
-    stage('deploy') {
-        
-        def war_name = "diamond-0.0.1-SNAPSHOT.war"
-        def PORT = 80
+    stage('deploying') {
+        def jar_name = "diamond-0.0.1-SNAPSHOT.war"
+        def port = 80
         sh """
-        cp ${env.WORKSPACE}/target/${war_name} /home/servers
-        cd /home/servers
-        if [ $(ps -ef | grep ${war_name} | wc -l) -gt 1 ]; then
-            kill -9 -f ${war_name}
+        cp ${env.WORKSPACE}/target/${jar_name} ~/servers
+        cd ~/servers
+        if [ \$(pgrep -f ${jar_name} | wc -l) -gt 0 ]; then
+            pkill -9 -f ${jar_name}
             echo "stop application"
         fi
-        JENKINS_NODE_COOKIE=DONTKILLME nohup java $JAVA_OPTS -Xmx256m -jar ${war_name} --spring.profiles.active=dev,no-liquibase --server.port=$PORT
+        JENKINS_NODE_COOKIE=DONTKILLME nohup java -Xmx256m -jar ${jar_name} --spring.profiles.active=dev,no-liquibase --server.port=${port} &  
         """
     }
 }
