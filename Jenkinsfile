@@ -43,20 +43,35 @@ node {
     // }
 
     stage('packaging') {
-        sh "./mvnw verify -Pprod -DskipTests"
+        sh "./mvnw package -Pdev -DskipTests"
         archiveArtifacts artifacts: '**/target/*.war', fingerprint: true
     }
 
-    def dockerImage
-    stage('build docker') {
-        sh "cp -R src/main/docker target/"
-        sh "cp target/*.war target/docker/"
-        dockerImage = docker.build('ccr.ccs.tencentyun.com/diamond', 'target/docker')
-    }
+    // def dockerImage
+    // stage('build docker') {
+    //     sh "cp -R src/main/docker target/"
+    //     sh "cp target/*.war target/docker/"
+    //     dockerImage = docker.build('ccr.ccs.tencentyun.com/diamond', 'target/docker')
+    // }
 
-    stage('publish docker') {
-        docker.withRegistry('yangcm/registry.hub.docker.yangcm', 'tenhub') {
-            dockerImage.push 'latest'
-        }
+    // stage('publish docker') {
+    //     docker.withRegistry('yangcm/registry.hub.docker.yangcm', 'tenhub') {
+    //         dockerImage.push 'latest'
+    //     }
+    // }
+
+    stage('deploy') {
+        
+        def war_name = "diamond-0.0.1-SNAPSHOT.war"
+        def PORT = 80
+        sh """
+        cp ${env.WORKSPACE}/target/${war_name} /home/servers
+        cd /home/servers
+        if [ $(ps -ef | grep ${war_name} | wc -l) -gt 0 ]; then
+            kill -9 -f ${war_name}
+            echo "stop application"
+        fi
+        JENKINS_NODE_COOKIE=DONTKILLME nohup java $JAVA_OPTS -Xmx256m -jar ${war_name} --spring.profiles.active=dev,no-liquibase --server.port=$PORT
+        """
     }
 }
