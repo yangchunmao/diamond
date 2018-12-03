@@ -60,15 +60,15 @@ node {
     //     }
     // }
 
-    stage('deploying') {
-        def jar_name = "diamond-0.0.1-SNAPSHOT.war"
-        def port = 80
-        sh """
-        if [ \$(pgrep -f ${jar_name} | wc -l) -gt 0 ]; then
-            pkill -9 -f ${jar_name}
-            echo "stop application"
-        fi
-        JENKINS_NODE_COOKIE=dontKillMe nohup java -Xmx256m -jar target/${jar_name} --spring.profiles.active=dev --server.port=${port} >/home/logs/diamond.log 2>&1 &  
-        """
-    }
+    // stage('deploying') {
+    //     def jar_name = "diamond-0.0.1-SNAPSHOT.war"
+    //     def port = 80
+    //     sh """
+    //     if [ \$(pgrep -f ${jar_name} | wc -l) -gt 0 ]; then
+    //         pkill -9 -f ${jar_name}
+    //         echo "stop application"
+    //     fi
+    //     JENKINS_NODE_COOKIE=dontKillMe nohup java -Xmx256m -jar target/${jar_name} --spring.profiles.active=dev --server.port=${port} >/home/logs/diamond.log 2>&1 &  
+    //     """
+    // }
 }
