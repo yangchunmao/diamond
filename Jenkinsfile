@@ -72,5 +72,5 @@ node {
     //     """
     // }
 
-    // nohup java $JAVA_OPTS -Xmx256m -jar target/*.war --spring.profiles.active=dev --server.port=80 >/home/logs/diamond.log 2>&1
+    // nohup java $JAVA_OPTS -Xmx256m -jar target/*.war --spring.profiles.active=dev --server.port=80 >/home/logs/diamond.log 2>&1 &
 }
