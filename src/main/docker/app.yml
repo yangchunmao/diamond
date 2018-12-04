@@ -4,12 +4,12 @@ services:
         image: diamond
         environment:
             - _JAVA_OPTIONS=-Xmx512m -Xms256m
-            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_PROFILES_ACTIVE=prod,swagger,tls
             - SPRING_DATASOURCE_URL=jdbc:mysql://diamond-mysql:3306/diamond?useUnicode=true&characterEncoding=utf8&useSSL=false
             - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
             - SPRING_DATA_JEST_URI=http://diamond-elasticsearch:9200
         ports:
-            - 8080:8080
+            - 443:443
     diamond-mysql:
         extends:
             file: mysql.yml
