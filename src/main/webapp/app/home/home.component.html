@@ -26,6 +26,27 @@
             If you have any question on JHipster:
         </p>
 
+        <button nz-button nzType="primary">Primary</button>
+        <button nz-button nzType="default">Default</button>
+        <button nz-button nzType="dashed">Dashed</button>
+        <button nz-button nzType="danger">Danger</button>
+        <br>
+        <nz-date-picker
+            nzShowTime
+            nzFormat="yyyy-MM-dd HH:mm:ss"
+            nzPlaceHolder="Select Time"
+            (ngModelChange)="onChange($event)"
+            (nzOnOk)="onOk($event)"
+        ></nz-date-picker>
+        <br>
+        <nz-range-picker
+            [nzShowTime]="{ nzFormat: 'HH:mm' }"
+            nzFormat="yyyy-MM-dd HH:mm"
+            [nzPlaceHolder]="[ 'Start Time', 'End Time' ]"
+            (ngModelChange)="onChange($event)"
+            (nzOnOk)="onOk($event)"
+        ></nz-range-picker>
+
         <ul>
             <li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener" jhiTranslate="home.link.homepage">JHipster homepage</a></li>
             <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener" jhiTranslate="home.link.stackoverflow">JHipster on Stack Overflow</a></li>
