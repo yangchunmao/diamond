@@ -1,0 +1,43 @@
+:host ::ng-deep .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+:host ::ng-deep .trigger:hover {
+    color: #1890ff;
+}
+
+:host ::ng-deep .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+}
+
+.sider-menu-index-logo {
+    height: 64px;
+    position: relative;
+    line-height: 64px;
+    padding-left: 24px;
+    transition: all 0.3s;
+    background: #002140;
+    overflow: hidden;
+}
+
+.sider-menu-index-logo img {
+    display: inline-block;
+    vertical-align: middle;
+    height: 32px;
+}
+
+.sider-menu-index-logo h1 {
+    color: #fff;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 20px;
+    margin: 0 0 0 12px;
+    font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}

@@ -19,8 +19,17 @@ import { DiamondAccountModule } from './account/account.module';
 import { DiamondEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
-import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import {
+    JhiMainComponent,
+    NavbarComponent,
+    FooterComponent,
+    PageRibbonComponent,
+    ActiveMenuDirective,
+    ErrorComponent,
+    HeaderComponent
+} from './layouts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SidebarComponent } from './layouts/sidebar/sidebar.component';
 
 @NgModule({
     imports: [
@@ -42,7 +51,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         DiamondEntityModule,
         BrowserAnimationsModule
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+    declarations: [
+        JhiMainComponent,
+        NavbarComponent,
+        ErrorComponent,
+        PageRibbonComponent,
+        ActiveMenuDirective,
+        FooterComponent,
+        HeaderComponent,
+        SidebarComponent
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,

@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router, ActivatedRouteSnapshot, NavigationEnd } from '@angular/router';
 
 import { JhiLanguageHelper } from 'app/core';
+import { SettingsService } from '../../shared';
 
 @Component({
     selector: 'jhi-main',
-    templateUrl: './main.component.html'
+    templateUrl: './main.component.html',
+    styleUrls: ['./main.component.css']
 })
 export class JhiMainComponent implements OnInit {
-    constructor(private jhiLanguageHelper: JhiLanguageHelper, private router: Router) {}
+    triggerTemplate = null;
+    isMobile = false;
+    @ViewChild('trigger')
+    customTrigger: TemplateRef<void>;
+
+    constructor(private jhiLanguageHelper: JhiLanguageHelper, private router: Router, public settings: SettingsService) {}
 
     private getPageTitle(routeSnapshot: ActivatedRouteSnapshot) {
         let title: string = routeSnapshot.data && routeSnapshot.data['pageTitle'] ? routeSnapshot.data['pageTitle'] : 'diamondApp';
@@ -24,5 +31,9 @@ export class JhiMainComponent implements OnInit {
                 this.jhiLanguageHelper.updateTitle(this.getPageTitle(this.router.routerState.snapshot.root));
             }
         });
+    }
+
+    changeTrigger(): void {
+        this.triggerTemplate = this.customTrigger;
     }
 }

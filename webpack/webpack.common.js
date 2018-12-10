@@ -71,6 +71,7 @@ module.exports = (options) => ({
             { from: './node_modules/swagger-ui/dist/lib', to: 'swagger-ui/dist/lib' },
             { from: './node_modules/swagger-ui/dist/swagger-ui.min.js', to: 'swagger-ui/dist/swagger-ui.min.js' },
             { from: './src/main/webapp/swagger-ui/', to: 'swagger-ui' },
+            { from: './node_modules/@ant-design/icons-angular/src/inline-svg/', to: 'assets' },
             { from: './src/main/webapp/content/', to: 'content' },
             { from: './src/main/webapp/favicon.ico', to: 'favicon.ico' },
             { from: './src/main/webapp/manifest.webapp', to: 'manifest.webapp' },
