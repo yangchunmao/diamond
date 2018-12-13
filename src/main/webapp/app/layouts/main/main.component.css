@@ -41,3 +41,12 @@
     font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
     font-weight: 600;
 }
+
+.jh-center-layout {
+    min-height: 100vh;
+}
+
+.jh-center-layout .jh-content {
+    margin: 24px;
+    padding-top: 0px;
+}

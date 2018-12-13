@@ -2,23 +2,44 @@
   <!-- home -->
   <li nz-menu-item (click)="tabClick('/')">
       <span title>
-          <i nz-icon type="home"></i><span jhiTranslate="global.menu.home">home</span>
+          <i nz-icon><fa-icon icon="home" fixedWidth="true"></fa-icon></i>
+          <span jhiTranslate="global.menu.home">home</span>
       </span>
   </li>
-  <li nz-submenu>
-      <span title><i nz-icon type="user"></i><span class="nav-text">User</span></span>
-      <ul>
-      <li nz-menu-item>Tom</li>
-      <li nz-menu-item>Bill</li>
-      <li nz-menu-item>Alex</li>
-      </ul>
+  <li nz-submenu id="admin-menu">
+    <span title>
+        <i nz-icon><fa-icon icon="user-plus"></fa-icon></i>
+        <span jhiTranslate="global.menu.admin.main">Administration</span>
+    </span>
+    <ul>
+      <li nz-menu-item (click)="tabClick('admin/user-management')">
+        <fa-icon icon="user" fixedWidth="true"></fa-icon>
+        <span jhiTranslate="global.menu.admin.userManagement">User management</span>
+      </li>
+      <li nz-menu-item (click)="tabClick('admin/jhi-metrics')">
+        <fa-icon icon="tachometer-alt" fixedWidth="true"></fa-icon>
+        <span jhiTranslate="global.menu.admin.metrics">Metrics</span>
+      </li>
+      <li nz-menu-item (click)="tabClick('admin/jhi-health')">
+        <fa-icon icon="heart" fixedWidth="true"></fa-icon>
+        <span jhiTranslate="global.menu.admin.health">Health</span>
+      </li>
+      <li nz-menu-item (click)="tabClick('admin/jhi-configuration')">
+        <fa-icon icon="list" fixedWidth="true"></fa-icon>
+        <span jhiTranslate="global.menu.admin.configuration">Configuration</span>
+      </li>
+      <li nz-menu-item (click)="tabClick('admin/audits')">
+        <fa-icon icon="bell" fixedWidth="true"></fa-icon>
+        <span jhiTranslate="global.menu.admin.audits">Audits</span>
+      </li>
+      <li nz-menu-item (click)="tabClick('admin/logs')">
+        <fa-icon icon="tasks" fixedWidth="true"></fa-icon>
+        <span jhiTranslate="global.menu.admin.logs">Logs</span>
+      </li>
+      <li nz-menu-item (click)="tabClick('admin/docs')">
+        <fa-icon icon="book" fixedWidth="true"></fa-icon>
+        <span jhiTranslate="global.menu.admin.apidocs">API</span>
+      </li>
+    </ul>
   </li>
-  <li nz-submenu>
-      <span title><i nz-icon type="team"></i><span class="nav-text">Team</span></span>
-      <ul>
-      <li nz-menu-item>Team 1</li>
-      <li nz-menu-item>Team 2</li>
-      </ul>
-  </li>
-  <li nz-menu-item><span><i nz-icon type="file"></i><span class="nav-text">File</span></span></li>
 </ul>

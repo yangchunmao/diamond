@@ -1,0 +1,33 @@
+/* ==========================================================================
+Header
+========================================================================== */
+.jh-header {
+    position: relative;
+    background: #fff;
+    padding: 0;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+}
+
+.jh-header .right-content {
+    float: right;
+    height: 100%;
+    overflow: hidden;
+}
+
+.jh-header .right-content .nav-item {
+    cursor: pointer;
+    padding: 0 12px;
+    display: inline-block;
+    transition: all 0.3s;
+    height: 100%;
+}
+
+.jh-header .right-content .nav-item .nav-link {
+    height: 100%;
+}
+
+.jh-header .dropdown-item.active,
+.jh-header .dropdown-item.active:focus,
+.jh-header .dropdown-item.active:hover {
+    background-color: #353d47;
+}

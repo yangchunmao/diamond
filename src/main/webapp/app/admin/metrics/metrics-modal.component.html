@@ -1,4 +1,3 @@
-<!-- Modal used to display the threads dump -->
 <div class="modal-header">
     <h4 class="modal-title" jhiTranslate="metrics.jvm.threads.dump.title">Threads dump</h4>
     <button type="button" class="close" (click)="activeModal.dismiss('closed')">&times;</button>
@@ -31,11 +30,11 @@
         <table class="table table-sm table-responsive">
             <thead>
                 <tr>
-                    <th jhiTranslate="metrics.jvm.threads.dump.blockedtime">Blocked Time</th>
-                    <th jhiTranslate="metrics.jvm.threads.dump.blockedcount">Blocked Count</th>
-                    <th jhiTranslate="metrics.jvm.threads.dump.waitedtime">Waited Time</th>
-                    <th jhiTranslate="metrics.jvm.threads.dump.waitedcount">Waited Count</th>
-                    <th jhiTranslate="metrics.jvm.threads.dump.lockname">Lock Name</th>
+                    <th><span jhiTranslate="metrics.jvm.threads.dump.blockedtime">Blocked Time</span></th>
+                    <th><span jhiTranslate="metrics.jvm.threads.dump.blockedcount">Blocked Count</span></th>
+                    <th><span jhiTranslate="metrics.jvm.threads.dump.waitedtime">Waited Time</span></th>
+                    <th><span jhiTranslate="metrics.jvm.threads.dump.waitedcount">Waited Count</span></th>
+                    <th><span jhiTranslate="metrics.jvm.threads.dump.lockname">Lock Name</span></th>
                 </tr>
             </thead>
             <tbody>
