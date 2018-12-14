@@ -48,4 +48,30 @@
       </li>
     </ul>
   </li>
+  <li nz-submenu id="entity-menu">
+    <span title>
+        <i nz-icon><fa-icon icon="th-list"></fa-icon></i>
+        <span jhiTranslate="global.menu.entities.main">
+            Entities
+        </span>
+    </span>
+    <ul>
+      <li nz-menu-item (click)="tabClick('points')">
+        <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+        <span jhiTranslate="global.menu.entities.points">Points</span>
+      </li>
+      <li nz-menu-item (click)="tabClick('weight')">
+        <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+        <span jhiTranslate="global.menu.entities.weight">Weight</span>
+      </li>
+      <li nz-menu-item (click)="tabClick('blood-press')">
+        <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+        <span jhiTranslate="global.menu.entities.bloodPress">Blood Press</span>
+      </li>
+      <li nz-menu-item (click)="tabClick('preferences')">
+        <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
+        <span jhiTranslate="global.menu.entities.preferences">Preferences</span>
+      </li>
+    </ul>
+  </li>
 </ul>

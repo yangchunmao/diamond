@@ -1,0 +1,25 @@
+{
+    "diamondApp": {
+        "bloodPress": {
+            "home": {
+                "title": "Blood Presses",
+                "createLabel": "Create a new Blood Press",
+                "createOrEditLabel": "Create or edit a Blood Press",
+                "search": "Search for Blood Press"
+            },
+            "created": "A new Blood Press is created with identifier {{ param }}",
+            "updated": "A Blood Press is updated with identifier {{ param }}",
+            "deleted": "A Blood Press is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Blood Press {{ id }}?"
+            },
+            "detail": {
+                "title": "Blood Press"
+            },
+            "timestamp": "Timestamp",
+            "systolic": "Systolic",
+            "diastolic": "Diastolic",
+            "user": "User"
+        }
+    }
+}

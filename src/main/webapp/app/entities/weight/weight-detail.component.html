@@ -1,0 +1,41 @@
+<div class="page-header">
+    <h2><span jhiTranslate="diamondApp.weight.detail.title">Weight</span> {{weight.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+</div>
+<div class="page-content">
+    <nz-card>
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div *ngIf="weight">
+                    <dl class="row-md jh-entity-details">
+                        <dt><span jhiTranslate="diamondApp.weight.timestamp">Timestamp</span></dt>
+                        <dd>
+                            <span>{{weight.timestamp | date:'medium'}}</span>
+                        </dd>
+                        <dt><span jhiTranslate="diamondApp.weight.weight">Weight</span></dt>
+                        <dd>
+                            <span>{{weight.weight}}</span>
+                        </dd>
+                        <dt><span jhiTranslate="diamondApp.weight.user">User</span></dt>
+                        <dd>
+                            {{weight.user?.login}}
+                        </dd>
+                    </dl>
+                    <button type="submit"
+                            (click)="previousState()"
+                            class="btn btn-info">
+                        <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+                    </button>
+        
+                    <button type="button"
+                            [routerLink]="['/weight', weight.id, 'edit']"
+                            class="btn btn-primary">
+                        <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nz-card>
+</div>
+

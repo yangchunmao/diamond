@@ -1,0 +1,52 @@
+DEFAULT_MAX_LENGHT = 140
+
+entity Points {
+	date LocalDate required,
+    exercise Integer,
+    meals Integer,
+    alcohol Integer,
+    notes String maxlength(DEFAULT_MAX_LENGHT)
+}
+
+entity Weight {
+	timestamp ZonedDateTime required,
+    weight Double required
+}
+
+entity BloodPress {
+	timestamp ZonedDateTime required,
+    systolic Integer required,
+    diastolic Integer required
+}
+
+// 配置， 一个用户有一个目标配置
+entity Preferences {
+	weeklyGoal Integer required min(10) max(21),
+    weightUnits Units required
+}
+
+enum Units {
+	KG, LB
+}
+
+// 关系
+// 一个分数隶属于一个用户
+relationship ManyToOne {
+	Points{user(login)} to User
+}
+
+relationship ManyToOne {
+	Weight{user(login)} to User
+}
+
+relationship ManyToOne {
+	BloodPress{user(login)} to User
+}
+
+relationship OneToOne {
+    Preferences{user(login)} to User
+}
+
+paginate Points, Weight, BloodPress, Preferences with pagination
+
+

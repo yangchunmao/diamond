@@ -7,6 +7,10 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "数据",
+                "points": "成绩",
+                "weight": "重量",
+                "bloodPress": "血压",
+                "preferences": "关系",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

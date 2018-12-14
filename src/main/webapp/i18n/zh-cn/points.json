@@ -1,0 +1,27 @@
+{
+    "diamondApp": {
+        "points": {
+            "home": {
+                "title": "成绩",
+                "createLabel": "创建新 成绩",
+                "createOrEditLabel": "创建或编辑 成绩",
+                "search": "查找 成绩"
+            },
+            "created": "成绩 {{ param }} 创建成功",
+            "updated": "成绩 {{ param }} 更新成功",
+            "deleted": "成绩 {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 成绩 {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "成绩详情"
+            },
+            "date": "日期",
+            "exercise": "今天锻炼了吗",
+            "meals": "今天吃肉了吗",
+            "alcohol": "今天喝酒了吗",
+            "notes": "备注",
+            "user": "用户"
+        }
+    }
+}

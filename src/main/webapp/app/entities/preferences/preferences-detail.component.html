@@ -1,0 +1,42 @@
+<div class="page-header">
+    <h2><span jhiTranslate="diamondApp.preferences.detail.title">Preferences</span> {{preferences.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+</div>
+<div class="page-content">
+  <nz-card>
+    <div class="row justify-content-center">
+        <div class="col-8">
+            <div *ngIf="preferences">
+                <dl class="row-md jh-entity-details">
+                    <dt><span jhiTranslate="diamondApp.preferences.weeklyGoal">Weekly Goal</span></dt>
+                    <dd>
+                        <span>{{preferences.weeklyGoal}}</span>
+                    </dd>
+                    <dt><span jhiTranslate="diamondApp.preferences.weightUnits">Weight Units</span></dt>
+                    <dd>
+                        <span jhiTranslate="{{'diamondApp.Units.' + preferences.weightUnits}}">{{preferences.weightUnits}}</span>
+                    </dd>
+                    <dt><span jhiTranslate="diamondApp.preferences.user">User</span></dt>
+                    <dd>
+                        {{preferences.user?.login}}
+                    </dd>
+                </dl>
+    
+                <button type="submit"
+                        (click)="previousState()"
+                        class="btn btn-info">
+                    <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+                </button>
+    
+                <button type="button"
+                        [routerLink]="['/preferences', preferences.id, 'edit']"
+                        class="btn btn-primary">
+                    <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+                </button>
+            </div>
+        </div>
+    </div>
+  </nz-card>
+</div>
+
