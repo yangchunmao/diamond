@@ -1,16 +1,5 @@
 <div id="root" class="screen-xxl" style="position: relative;">
     <jhi-page-ribbon></jhi-page-ribbon>
-    <!-- <div>
-        <router-outlet name="navbar"></router-outlet>
-    </div>
-    <div class="container-fluid">
-        <div class="card jh-card">
-            <router-outlet></router-outlet>
-            <router-outlet name="popup"></router-outlet>
-        </div>
-        <jhi-footer></jhi-footer>
-    </div> -->
-    <!-- 自建布局，暂不支持手机显示-->
     <nz-layout>
         <ng-container *ngIf="!isMobile">
             <nz-sider nzCollapsible [(nzCollapsed)]="this.settings.layout.collapsed" [nzTrigger]="null" [nzWidth]="256" style="box-shadow: 2px 0 6px rgba(0,21,41,.35); position: relative; z-index: 10">
@@ -37,6 +26,15 @@
         </nz-layout>
     </nz-layout>
 </div>
+
+<!-- <ul class="flex-container">
+    <li class="flex-item">1</li>
+    <li class="flex-item">2</li>
+    <li class="flex-item">3</li>
+    <li class="flex-item">4</li>
+    <li class="flex-item">5</li>
+    <li class="flex-item">6</li>
+</ul> -->
 
 
 
